@@ -12,7 +12,10 @@ export async function DELETE(
 
     await deletePost(p.id);
     return NextResponse.json({ message: "Post deleted" }, { status: 200 });
-  } catch (error) {
+  } catch (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    error
+  ) {
     return NextResponse.json(
       { error: "Failed to delete post" },
       { status: 500 }
