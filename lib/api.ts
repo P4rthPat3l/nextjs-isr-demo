@@ -25,7 +25,7 @@ export async function getPosts(): Promise<Post[]> {
 
     const res = await fetch(url, {
       headers,
-      next: { revalidate: 60 },
+      // next: { revalidate: 60 },
     });
 
     if (!res.ok) {

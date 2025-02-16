@@ -1,4 +1,4 @@
-import { deletePost } from "@/app/lib/api";
+import { deletePost } from "@/lib/api";
 import { NextResponse } from "next/server";
 import { NextRequest } from "next/server";
 

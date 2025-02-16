@@ -1,5 +1,5 @@
-import { createPost } from "@/app/lib/api";
-import { CreatePostInput } from "@/app/types/post";
+import { createPost } from "@/lib/api";
+import { CreatePostInput } from "@/types/post";
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
