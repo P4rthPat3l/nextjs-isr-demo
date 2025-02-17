@@ -20,7 +20,7 @@ const headers = new Headers({
 export async function getPosts(): Promise<Post[]> {
   try {
     const url = `${BASE_URL}/${BIN_ID}`;
-    // console.log("url", url);
+    console.log("url", url);
     // console.log("headers", headers);  
 
     const res = await fetch(url, {

@@ -49,6 +49,7 @@ export default async function Posts() {
           </div>
         </header>
 
+        <CreatePostForm />
         {error ? (
           <div className="p-6 mb-8 bg-red-50 border border-red-200 rounded-lg">
             <div className="flex items-center space-x-3">
@@ -73,7 +74,6 @@ export default async function Posts() {
           </div>
         ) : (
           <>
-            <CreatePostForm />
 
             {posts.length === 0 ? (
               <div className="text-center py-12 bg-white rounded-lg shadow-sm border border-gray-100">

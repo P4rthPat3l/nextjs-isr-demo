@@ -8,6 +8,7 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
+  "env": {},
   "kv_namespaces": [
     {
       "binding": "NEXT_CACHE_WORKERS_KV",
