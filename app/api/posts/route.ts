@@ -1,10 +1,12 @@
 import { createPost } from "@/lib/api";
 import { CreatePostInput } from "@/types/post";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   try {
+
     const input: CreatePostInput = await request.json();
+
     const post = await createPost(input);
     return NextResponse.json(post, { status: 201 });
   } catch (

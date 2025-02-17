@@ -27,7 +27,7 @@ next-env.d.ts
 
 # Cloudflare
 .wrangler
-.dev.vars
+# .dev.vars
 
 # Debug
 npm-debug.log*
@@ -36,11 +36,11 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # Local env files
-.env
-.env*.local
-.env.development
-.env.test
-.env.production
+# .env
+# # .env*.local
+# .env.development
+# .env.test
+# .env.production
 
 # Vercel
 .vercel

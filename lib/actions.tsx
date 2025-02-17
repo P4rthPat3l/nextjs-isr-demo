@@ -4,13 +4,24 @@ import { revalidatePath } from "next/cache";
 
 
 export const createPostAction = async (_state: unknown, input: FormData): Promise<{ error?: string } | undefined> => {
-    const response = await fetch('/api/posts', {
+    const title = input.get("title") || ""
+    const body = input.get("body") || ""
+
+    const fullURL = `${process.env.NEXT_URL}/api/posts`
+
+    console.log(fullURL);
+    
+
+    const response = await fetch(fullURL, {
         method: 'POST',
-        body: input,
+        body: JSON.stringify({
+            title: title,
+            body: body
+        }),
     });
 
     if (!response.ok) {
-        // throw new Error(await response.text());
+
         return { error: await response.text() };
     }
 
@@ -22,7 +33,10 @@ export const createPostAction = async (_state: unknown, input: FormData): Promis
 export const deletePostAction = async (_state: unknown, input: FormData): Promise<{ error?: string } | undefined> => {
     const postId = input.get('postId') as string;
 
-    const response = await fetch(`/api/posts/${postId}`, {
+
+    const fullURL = `${process.env.NEXT_URL}/api/posts/${postId}`
+
+    const response = await fetch(fullURL, {
         method: 'DELETE',
     });
 
