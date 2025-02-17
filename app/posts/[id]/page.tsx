@@ -4,7 +4,8 @@ import { notFound } from "next/navigation";
 
 
 
-export const revalidate = 60;
+
+export const revalidate = 3600 // invalidate every hour
 
 async function getPost(id: string) {
   const API_KEY = process.env.JSONBIN_API_KEY;

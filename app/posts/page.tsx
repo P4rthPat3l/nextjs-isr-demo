@@ -4,7 +4,8 @@ import CreatePostForm from "@/components/CreatePostForm";
 import DeletePostButton from "@/components/DeletePostButton";
 import { Post } from "@/types/post";
 
-export const revalidate = 60;
+export const revalidate = 3600 // invalidate every hour
+
 
 export default async function Posts() {
   let posts: Post[] = [];
