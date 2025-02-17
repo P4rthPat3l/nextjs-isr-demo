@@ -9,3 +9,4 @@ database: https://app.eraser.io/workspace/a0mYkcgyBAWjfUmzIK5E?origin=share (for
 
 notion :  https://excellent-energy-325.notion.site/Deploy-on-Cloudflare-19919186ff13807d80caf828957c4254?pvs=73
 
+site : https://nextjs-isr-demo.pp542004.workers.dev/posts
