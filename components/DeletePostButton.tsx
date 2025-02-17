@@ -1,8 +1,7 @@
 'use client';
 
-import { useActionState, useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
 import { deletePostAction } from '@/lib/actions';
+import { useActionState, useEffect } from 'react';
 
 interface DeletePostButtonProps {
   postId: string;
@@ -24,8 +23,7 @@ export default function DeletePostButton({ postId }: DeletePostButtonProps) {
   return (
 
     <form action={formAction}>
-
-
+      <input type="hidden" name="postId" value={postId} />
       <button
         disabled={pending}
         className="inline-flex items-center px-3 py-1 border border-red-600 text-sm 

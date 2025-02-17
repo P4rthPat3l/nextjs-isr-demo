@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { type Post } from "../../../types/post";
+import { type Post } from "@/types/post";
 import { notFound } from "next/navigation";
 
 
@@ -14,12 +14,14 @@ async function getPost(id: string) {
     throw new Error("Missing API configuration");
   }
 
-  const res = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+  const fullUrl = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
+  console.log("fullUrl", fullUrl);
+
+  const res = await fetch(fullUrl, {
     headers: {
       "Content-Type": "application/json",
       "X-Master-Key": API_KEY,
     },
-    // next: { revalidate: 60 },
   });
 
   if (!res.ok) {
