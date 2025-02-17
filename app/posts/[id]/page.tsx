@@ -3,9 +3,9 @@ import { type Post } from "@/types/post";
 import { notFound } from "next/navigation";
 
 
+export const revalidate = false
 
 
-export const revalidate = 3600 // invalidate every hour
 
 async function getPost(id: string) {
   const API_KEY = process.env.JSONBIN_API_KEY;
@@ -25,18 +25,22 @@ async function getPost(id: string) {
     },
   });
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch post");
-  }
+  if (!res.ok) { throw new Error("Failed to fetch post"); }
 
   const data = await res.json();
   const post = data.record.posts.find((p: Post) => p.id === id);
 
-  if (!post) {
-    throw notFound()
-  }
+  if (!post) { throw notFound() }
 
   return post;
+}
+
+
+export async function generateStaticParams() {
+
+  return ["c330ba9b-e89b-4120-8527-d829b7f73cf5"].map((post) => ({
+    id: String(post),
+  }))
 }
 
 interface PageProps {
