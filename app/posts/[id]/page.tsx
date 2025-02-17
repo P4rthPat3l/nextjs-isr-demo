@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { type Post } from "@/types/post";
 import { notFound } from "next/navigation";
+import { getPosts } from "../../../lib/api";
 
 
 export const revalidate = false
@@ -38,8 +39,11 @@ async function getPost(id: string) {
 
 export async function generateStaticParams() {
 
-  return ["c330ba9b-e89b-4120-8527-d829b7f73cf5"].map((post) => ({
-    id: String(post),
+
+  const posts: Post[] = await getPosts();
+
+  return posts.map((post) => ({
+    id: String(post.id),
   }))
 }
 
