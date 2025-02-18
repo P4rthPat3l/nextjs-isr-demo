@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { getPosts } from "../../../lib/api";
 
 
-export const revalidate = false
+export const revalidate = 36000
 
 
 
