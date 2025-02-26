@@ -12,3 +12,5 @@ notion :  https://excellent-energy-325.notion.site/Deploy-on-Cloudflare-19919186
 site : https://nextjs-isr-demo.pp542004.workers.dev/posts
 
 vercel : https://nextjs-isr-demo-two.vercel.app/
+
+cloudflare [after removing api routes] : https://nextjs-isr-demo.pp542004.workers.dev/
